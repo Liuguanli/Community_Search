@@ -13,7 +13,7 @@ public class KCore {
 
     private Point queryPoint;
 
-    Map<Point,Integer> coreNum;
+    Map<Point, Integer> coreNum;
 
     public KCore(Graph graph, int k, Point queryPoint) {
         this.k = k;
@@ -45,10 +45,9 @@ public class KCore {
             boolean isFlag = true;
 
             List<Edge> edges = graph.vertexList.get(point);
-
-            if (coreNum.get(point) >= k) {
+            if (coreNum.containsKey(point) && coreNum.get(point) >= k) {
                 for (Edge edge : edges) {
-                    if (coreNum.get(edge.v2) < k) {
+                    if (coreNum.containsKey(edge.v2) && coreNum.get(edge.v2) < k) {
                         isFlag = false;
                         break;
                     }

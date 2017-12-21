@@ -26,7 +26,8 @@ public class Exact {
 
         double radius = Double.MAX_VALUE;
         List<Point> result = null;
-        for (int i = 3; i < points.size(); i++) {
+//        for (int i = 3; i < points.size(); i++) {
+        for (int i = 33; i < points.size(); i++) {
             System.out.println("--------------" + i + "--------------");
             for (int j = 1; j < i - 2; j++) {
                 for (int h = j + 1; h < i - 1; h++) {

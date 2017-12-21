@@ -68,4 +68,15 @@ public class Graph {
         return graph;
     }
 
+    public List<Point> getNb(Point point) {
+        List<Edge> edges = vertexList.get(point);
+
+        List<Point> neighbors = new LinkedList<>();
+        for (Edge edge: edges) {
+            neighbors.add(edge.v2);
+        }
+        return neighbors;
+    }
+
+
 }

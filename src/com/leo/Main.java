@@ -19,6 +19,20 @@ public class Main {
         int k = 2;
         KCore kcore = new KCore(graph, k, query);
         List<Point> points = kcore.findKCore();
+//        Exact exact = new Exact();
+//        List<Point> result = exact.calc(points, query, graph, k);
+//        System.out.println("result->" + result);
+//        executeAppInc(points, query, graph, k);
+        executeExact(points, query, graph, k);
+    }
+
+    public static void executeAppInc(List<Point> points, Point query, Graph graph, int k) {
+        AppInc appInc = new AppInc();
+        List<Point> result = appInc.calc(points, query, graph, k);
+        System.out.println("result->" + result);
+    }
+
+    public static void executeExact(List<Point> points, Point query, Graph graph, int k) {
         Exact exact = new Exact();
         List<Point> result = exact.calc(points, query, graph, k);
         System.out.println("result->" + result);
