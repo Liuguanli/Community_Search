@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class AppInc {
 
-    public List<Point> calc(List<Point> points, Point query, Graph graph, int k) {
+    public List<Point> calc(Point query, Graph graph, int k) {
         List<Point> queue = new LinkedList<>();
         List<Point> S = new LinkedList<>();
         List<Point> T = new LinkedList<>();
