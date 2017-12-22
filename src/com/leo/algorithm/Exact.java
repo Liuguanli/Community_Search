@@ -1,4 +1,9 @@
-package com.leo;
+package com.leo.algorithm;
+
+import com.leo.bean.Graph;
+import com.leo.utils.KCore;
+import com.leo.utils.MMC;
+import com.leo.bean.Point;
 
 import java.util.*;
 

@@ -1,4 +1,6 @@
-package com.leo;
+package com.leo.utils;
+
+import com.leo.bean.Point;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -7,6 +9,7 @@ import java.util.List;
 
 /**
  * Created by apple on 2017/12/21.
+ * 最简单粗暴的KNN算法
  */
 public class KNN {
 
@@ -28,7 +31,7 @@ public class KNN {
             Collections.sort(result, new Comparator<Point>() {
                 @Override
                 public int compare(Point p1, Point p2) {
-                    if (p1.getDistance(query) < p2.getDistance(query)) {
+                    if (p1.getDistance(query) > p2.getDistance(query)) {
                         return 1;
                     } else if (p1.getDistance(query) < p2.getDistance(query)) {
                         return -1;

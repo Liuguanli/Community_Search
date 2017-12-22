@@ -1,4 +1,6 @@
-package com.leo;
+package com.leo.utils;
+
+import com.leo.bean.Point;
 
 import java.util.List;
 

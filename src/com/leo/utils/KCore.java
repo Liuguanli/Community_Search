@@ -1,9 +1,14 @@
-package com.leo;
+package com.leo.utils;
+
+import com.leo.bean.Edge;
+import com.leo.bean.Graph;
+import com.leo.bean.Point;
 
 import java.util.*;
 
 /**
  * Created by apple on 2017/12/18.
+ * 论文中提到的KCore算法
  */
 public class KCore {
 
@@ -68,9 +73,9 @@ public class KCore {
             points.add(edges.get(i).v2);
         }
 
-        System.out.println("size->" + graph.vertexList.get(maxCoreIndex).size());
-        System.out.println("maxCore->" + maxCore);
-        System.out.println("maxCoreIndex->" + maxCoreIndex);
+//        System.out.println("size->" + graph.vertexList.get(maxCoreIndex).size());
+//        System.out.println("maxCore->" + maxCore);
+//        System.out.println("maxCoreIndex->" + maxCoreIndex);
 
         return points;
     }

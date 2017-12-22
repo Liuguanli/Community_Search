@@ -1,14 +1,14 @@
-package com.leo;
+package com.leo.bean;
 
 /**
  * Created by apple on 2017/12/18.
  */
 public class Point {
 
-    int index;
+    public int index;
 
-    double latitude;
-    double longitude;
+    public double latitude;
+    public double longitude;
 
     public Point(int index) {
         this.index = index;

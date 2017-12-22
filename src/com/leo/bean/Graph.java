@@ -1,4 +1,4 @@
-package com.leo;
+package com.leo.bean;
 
 import com.leo.utils.DataUtil;
 
@@ -28,9 +28,9 @@ public class Graph {
         numOfEdges++;
     }
 
-    public void buildGraph() {
-        List<String> edges = DataUtil.readFileByLines("loc-brightkite_edges.txt");
-        List<String> positions = DataUtil.readFileByLines("loc-brightkite_totalCheckins_extract.txt");
+    public void buildGraph(String edgePath, String locationPath) {
+        List<String> edges = DataUtil.readFileByLines(edgePath);
+        List<String> positions = DataUtil.readFileByLines(locationPath);
 
         for (String string : positions) {
             String[] result = string.split("\t");
@@ -47,8 +47,8 @@ public class Graph {
         }
 
         numOfVertex = vertexList.size();
-        System.out.println("numOfEdges->" + numOfEdges);
-        System.out.println("vertexs->" + numOfVertex);
+//        System.out.println("numOfEdges->" + numOfEdges);
+//        System.out.println("vertexs->" + numOfVertex);
     }
 
     public Graph induceSubGraph(List<Point> points) {
@@ -72,7 +72,7 @@ public class Graph {
         List<Edge> edges = vertexList.get(point);
 
         List<Point> neighbors = new LinkedList<>();
-        for (Edge edge: edges) {
+        for (Edge edge : edges) {
             neighbors.add(edge.v2);
         }
         return neighbors;

@@ -1,6 +1,12 @@
 package com.leo;
 
-import com.leo.utils.DataUtil;
+import com.leo.algorithm.AppFast;
+import com.leo.bean.AppFastResult;
+import com.leo.algorithm.AppInc;
+import com.leo.algorithm.Exact;
+import com.leo.bean.Graph;
+import com.leo.bean.Point;
+import com.leo.utils.KCore;
 
 import java.util.List;
 
@@ -14,7 +20,7 @@ public class Main {
 //        DataUtil.extractData();
 
         Graph graph = new Graph();
-        graph.buildGraph();
+        graph.buildGraph("loc-brightkite_edges.txt", "loc-brightkite_totalCheckins_extract.txt");
         Point query = new Point(0);
         int k = 2;
         KCore kcore = new KCore(graph, k, query);
@@ -24,13 +30,15 @@ public class Main {
 //        System.out.println("result->" + result);
 //        executeAppInc(query, graph, k);
         executeAppFast(query, graph, k, 0.5);
+
         executeExact(points, query, graph, k);
     }
 
-    public static void executeAppFast(Point query, Graph graph, int k, double epsilon) {
+    public static AppFastResult executeAppFast(Point query, Graph graph, int k, double epsilon) {
         AppFast appFast = new AppFast();
-        List<Point> result = appFast.calc(query, graph, k, epsilon);
-        System.out.println("result->" + result);
+        AppFastResult result = appFast.calc(query, graph, k, epsilon);
+        System.out.println("result->" + result.reuslt);
+        return result;
     }
 
     public static void executeAppInc(Point query, Graph graph, int k) {

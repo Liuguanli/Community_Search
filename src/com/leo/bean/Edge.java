@@ -1,4 +1,4 @@
-package com.leo;
+package com.leo.bean;
 
 /**
  * Created by apple on 2017/12/18.
